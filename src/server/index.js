@@ -1,6 +1,7 @@
 import http from 'http';
 import path from 'path';
 import swig from 'swig';
+import open from 'opener';
 import logger from 'morgan';
 import express from 'express';
 import compression from 'compression';
@@ -25,4 +26,5 @@ app.use(middleware.renderHTML.development());
 
 http.createServer(app).listen(port, () => {
     console.log('Web app is listening on localhost:%s', port);
+    open(`http://localhost:${port}`);
 });

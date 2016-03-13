@@ -9,7 +9,14 @@
     "start": "npm run watch & npm run nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["react", "react-router", "universal", "flux", "flummox", "boilerplate"],
+  "keywords": [
+    "react",
+    "react-router",
+    "universal",
+    "flux",
+    "flummox",
+    "boilerplate"
+  ],
   "author": "Dmitri Voronianski <dmitri.voronianski@gmail.com>",
   "license": "MIT",
   "dependencies": {
@@ -30,6 +37,7 @@
     "morgan": "^1.7.0",
     "normalize.css": "^3.0.3",
     "nprogress": "^0.2.0",
+    "opener": "^1.4.1",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-router": "^2.0.1",
