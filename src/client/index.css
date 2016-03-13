@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,300,500,700&subset=latin,cyrillic');
+
+@import 'normalize.css';
+@import 'basscss';
+@import 'basscss-btn';
+@import 'basscss-btn-primary';
+@import 'basscss-btn-sizes';
+@import 'basscss-colors';
+@import 'basscss-background-colors';
+@import 'nprogress/nprogress';
+
+body {
+    color: var(--body-color);
+    font-family: var(--font-family);
+}
+
+:root {
+    --font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --body-color: #333;
+}
