@@ -34,17 +34,17 @@ function handler (title, mainJS, mainCSS) {
 
                     res.render('index', {
                         // bundles
-                        mainJS: mainJS,
-                        mainCSS: mainCSS,
+                        mainJS,
+                        mainCSS,
 
                         // flux data
-                        snapshot: snapshot,
+                        snapshot,
 
                         // react data
-                        appString: appString,
+                        appString,
 
                         // html misc
-                        title: title
+                        title
                     });
                 } catch (err) {
                     next(err);

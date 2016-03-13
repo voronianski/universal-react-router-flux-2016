@@ -11,7 +11,6 @@ function createFluxPerRequest () {
         const api = new MockAPI(accessToken);
         const flux = new Flux(api);
 
-        console.log(req.url, 'created flux');
         req.flux = flux;
 
         next();

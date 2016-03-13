@@ -24,12 +24,12 @@ const mountNode = document.getElementById('app');
 const accessToken = cookies('access_token');
 const api = new MockAPI(accessToken)
 const flux = new Flux(api);
+flux.deserialize(decodeURIComponent(window.escape(atob(window.__snapshot__))));
+
 const patchedRoutes = patchRouteHooks(routes, { flux });
 const passFluxToComponent = (Component, props) => {
     return <Component flux={flux} {...props} />
 };
-
-flux.deserialize(decodeURIComponent(window.escape(atob(window.__snapshot__))));
 
 RouterMatch({history: browserHistory, routes: patchedRoutes}, async (error, redirectLocation, renderProps) => {
     if (redirectLocation) {
