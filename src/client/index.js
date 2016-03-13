@@ -32,27 +32,15 @@ const passFluxToComponent = (Component, props) => {
 flux.deserialize(decodeURIComponent(window.escape(atob(window.__snapshot__))));
 
 RouterMatch({history: browserHistory, routes: patchedRoutes}, async (error, redirectLocation, renderProps) => {
-    progress.start(); // show progress on route change
-    console.log('start progress?');
-
-    console.log(redirectLocation, renderProps);
-    if (!renderProps && redirectLocation) {
+    if (redirectLocation) {
         window.location.pathname = redirectLocation.pathname;
-        return;
+    } else if (renderProps) {
+        ReactDOM.render(
+            <Router
+                {...renderProps}
+                createElement={passFluxToComponent}
+            />,
+            mountNode
+        );
     }
-
-    ReactDOM.render(
-        <Router
-            {...renderProps}
-            createElement={passFluxToComponent}
-        />,
-        mountNode,
-        () => progress.done()
-    );
 });
-
-// ReactDOM.render(
-//     <Router history={browserHistory} routes={patchedRoutes} createElement={passFluxToComponent} />,
-//     mountNode,
-//     () => progress.done()
-// );
