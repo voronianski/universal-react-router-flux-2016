@@ -12,7 +12,6 @@ function handler (title, mainJS, mainCSS) {
             return next();
         }
 
-
         const flux = req.flux;
         const patchedRoutes = patchRouteHooks(routes, { flux });
         RouterMatch({routes: patchedRoutes, location: req.url}, async function (err, redirectLocation, renderProps) {
