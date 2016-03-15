@@ -14,7 +14,7 @@ function createFluxPerRequest () {
         req.flux = flux;
 
         next();
-    }
+    };
 }
 
 export default createFluxPerRequest;

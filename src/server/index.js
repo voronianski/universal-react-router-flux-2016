@@ -20,7 +20,7 @@ app.use(cookieParser());
 app.use(compression());
 app.use('/static', express.static(path.join(__dirname, '../../public')));
 
-app.use(middleware.skipClientForUrls(['/static', '/favicon']))
+app.use(middleware.skipClientForUrls(['/static', '/favicon']));
 app.use(middleware.createFluxPerRequest());
 app.use(middleware.renderHTML.development());
 

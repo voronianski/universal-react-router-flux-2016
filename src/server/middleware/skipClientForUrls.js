@@ -10,7 +10,7 @@ function skipClientForUrls (skipUrls = []) {
             req.skipClient = true;
         }
         next();
-    }
+    };
 }
 
 export default skipClientForUrls;

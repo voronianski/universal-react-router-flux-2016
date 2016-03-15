@@ -2,15 +2,16 @@ import React from 'react'; // eslint-disable-line no-unused-vars
 import ReactDOM from 'react-dom/server';
 import RouterMatch from 'react-router/lib/match';
 import RouterContext from 'react-router/lib/RouterContext';
+import patchRouteHooks from 'react-router-hooks-patch';
 
 import routes from '../../shared/routes';
-import patchRouteHooks from '../../shared/utils/patchRouteHooks';
 
 function handler (title, mainJS, mainCSS) {
     return (req, res, next) => {
         if (req.skipClient) {
             return next();
         }
+
 
         const flux = req.flux;
         const patchedRoutes = patchRouteHooks(routes, { flux });
@@ -25,7 +26,7 @@ function handler (title, mainJS, mainCSS) {
                         <RouterContext
                             {...renderProps}
                             createElement={(Component, props) => {
-                                return <Component flux={flux} {...props} />
+                                return <Component flux={flux} {...props} />;
                             }}
                         />
                     );
@@ -75,4 +76,4 @@ function production () {
 export default {
     development,
     production
-}
+};

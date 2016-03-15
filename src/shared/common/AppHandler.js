@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class AppHandler extends React.Component {
+class AppHandler extends Component {
     render() {
         return (
             <div className="center">

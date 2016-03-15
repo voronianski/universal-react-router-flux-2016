@@ -13,9 +13,7 @@ class AuthActions extends Actions {
     }
 
     async logout() {
-        console.log('do?')
         await this.api.logout();
-        console.log('da!')
     }
 }
 

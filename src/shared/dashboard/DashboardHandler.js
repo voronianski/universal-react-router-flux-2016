@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import FluxComponent from 'flummox/component';
-import Header from '../common/components/Header';
 
 class DashboardHandlerInner extends Component {
     render() {
@@ -8,23 +7,20 @@ class DashboardHandlerInner extends Component {
 
         return (
             <div>
-                <Header />
-                <div className="py4">
-                    <h1>List of things:</h1>
-                    {items.length ? (
-                        <div>
-                            {items.map(item => {
-                                return (
-                                    <div key={item._id}>
-                                        {item.title}
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    ) : (
-                        <div>No things :(</div>
-                    )}
-               </div>
+                <h1>List of things:</h1>
+                {items.length ? (
+                    <div>
+                        {items.map(item => {
+                            return (
+                                <div key={item._id}>
+                                    {item.title}
+                                </div>
+                            );
+                        })}
+                    </div>
+                ) : (
+                    <div>No things :(</div>
+                )}
             </div>
         );
     }
