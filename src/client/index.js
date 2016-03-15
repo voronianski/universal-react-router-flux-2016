@@ -41,7 +41,5 @@ RouterMatch({history: browserHistory, routes: patchedRoutes}, async (error, redi
             />,
             mountNode
         );
-    } else {
-        console.log('404?');
     }
 });
